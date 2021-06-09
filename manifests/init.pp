@@ -43,6 +43,8 @@ class influxdb (
   $max_values_per_tag                 = $influxdb::params::max_values_per_tag,
   $udp_enable                         = $influxdb::params::udp_enable,
   $udp_bind_address                   = $influxdb::params::udp_bind_address,
+  $collectd_enable                    = $influxdb::params::collectd_enable,
+  $collectd_bind_address              = $influxdb::params::collectd_bind_address,
   $graphite_enable                    = $influxdb::params::graphite_enable,
   $graphite_database                  = $influxdb::params::graphite_database,
   $graphite_listen                    = $influxdb::params::graphite_listen,

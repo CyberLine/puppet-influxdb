@@ -27,6 +27,8 @@ class influxdb::params {
   $max_values_per_tag                 = '100000'
   $udp_enable                         = false
   $udp_bind_address                   = '0.0.0.0:8089'
+  $collectd_enable                    = false
+  $collectd_bind_address              = ':25826'
   $graphite_enable                    = false
   $graphite_database                  = 'graphite'
   $graphite_listen                    = ':2003'
