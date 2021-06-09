@@ -101,8 +101,8 @@ class influxdb (
 
   if $ensure_service == 'running' {
       exec { 'wait_for_influxdb_to_listen':
-        command   => 'influx -execute quit',
-        unless    => 'influx -execute quit',
+        command   => "influx -socket ${http_bind_socket} -execute quit",
+        unless    => "influx -socket ${http_bind_socket} -execute quit",
         tries     => '3',
         try_sleep => '10',
         require   => Service[$influxdb_service_name],
@@ -111,9 +111,9 @@ class influxdb (
 
       if $http_auth_enabled {
         if $https_enable {
-          $influx_init_cmd = 'influx -ssl -unsafeSsl'
+          $influx_init_cmd = "influx -socket ${http_bind_socket} -ssl -unsafeSsl"
         } else {
-          $influx_init_cmd = 'influx'
+          $influx_init_cmd = "influx -socket ${http_bind_socket}"
         }
         exec { 'create_influxdb_admin_user':
           path    => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin',
