@@ -7,6 +7,12 @@
   "source": "https://github.com/veepee-puppet/puppet-influxdb",
   "project_page": "https://github.com/veepee-puppet/puppet-influxdb",
   "issues_url": "https://github.com/veepee-puppet/puppet-influxdb/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-apt",
+      "version_requirement": ">= 4.5.1 <= 7.8.0"
+    }
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "CentOS",
