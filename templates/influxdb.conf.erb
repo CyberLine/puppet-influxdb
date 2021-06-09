@@ -201,10 +201,10 @@ hostname = "<%= @hostname %>"
 
 [admin]
   # Determines whether the admin service is enabled.
-  # enabled = <%= @admin_enable %>
+  enabled = <%= @admin_enable %>
 
   # The default bind address used by the admin service.
-  # bind-address = "<%= @admin_bind_address %>"
+  bind-address = "<%= @admin_bind_address %>"
 
   # Whether the admin service should use HTTPS.
   # https-enabled = false
@@ -363,14 +363,14 @@ hostname = "<%= @hostname %>"
 ###
 
 [[collectd]]
-  # enabled = <%= @collectd_enable %>
-  # bind-address = "<%= @collectd_bind_address %>"
-  # database = "collectd"
-  # retention-policy = ""
+  enabled = <%= @collectd_enable %>
+  bind-address = "<%= @collectd_bind_address %>"
+  database = "collectd"
+  retention-policy = ""
   #
   # The collectd service supports either scanning a directory for multiple types
   # db files, or specifying a single db file.
-  # typesdb = "<%= @collectd_typesdb %>"
+  typesdb = "<%= @collectd_typesdb %>"
   #
   # security-level = "none"
   # auth-file = "/etc/collectd/auth_file"
@@ -431,7 +431,7 @@ hostname = "<%= @hostname %>"
 
 [[udp]]
   enabled = <%= @udp_enable %>
-  bind-address = <%= @udp_bind_address %>
+  bind-address = "<%= @udp_bind_address %>"
   database = "udp"
   # retention-policy = ""
 
